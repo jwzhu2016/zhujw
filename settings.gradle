@@ -1,0 +1,1 @@
+include ':app', ':base:protoprocessor', ':kotlin', ':base:route', ':msghandle', ':common'

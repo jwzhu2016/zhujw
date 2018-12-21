@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhujw.projects.kotlin">
+
+    <application>
+        <activity android:name=".Module1Activity" />
+    </application>
+</manifest>

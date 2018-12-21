@@ -1,0 +1,33 @@
+if (!isModule) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply from: "${rootDir}/common_config.gradle"
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+
+def cfg = rootProject.ext.android
+def appId = rootProject.ext.appId
+
+android {
+    compileSdkVersion cfg.compileSdkVersion
+
+    defaultConfig {
+        if (!isModule) {
+            applicationId appId.kotlin
+        }
+
+        sourceSets {
+            main {
+                if (isModule) {
+                    manifest.srcFile 'src/main/AndroidManifest.xml'
+                } else {
+                    manifest.srcFile 'src/main/module/AndroidManifest.xml'
+                }
+            }
+        }
+    }
+
+}
